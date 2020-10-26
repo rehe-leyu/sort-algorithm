@@ -1,0 +1,23 @@
+# 升序排序
+def bubble_sort(alist):
+    # 列表长度
+    n = len(alist)
+    # 控制轮数
+    for j in range(0, n - 1):
+        # 统计交换次数
+        count = 0
+        # 控制比较次数
+        for i in range(0, n - j - 1):
+            # 数据交换
+            if alist[i] > alist[i + 1]:
+                alist[i], alist[i + 1] = alist[i + 1], alist[i]
+                count += 1
+		#未发生数据交换，则数列有序
+        if count == 0:
+            return alist
+#调用
+if __name__ == '__main__':
+
+    alist = [1,8,5,7]
+    bubble_sort(alist)
+    print(alist)
